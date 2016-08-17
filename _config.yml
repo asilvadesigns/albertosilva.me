@@ -27,5 +27,7 @@ github_username:  jekyll
 # Build settings
 markdown: kramdown
 permalink: pretty
-source: "app/src/"
-destination: "app/dist/"
+sass:
+    sass_dir: _sass
+source: "app/"
+destination: "_site"

@@ -10,8 +10,8 @@ var uglify       = require('gulp-uglify');
 var util		 = require('gulp-util');
 
 var basePath = {
-	src: 'app/src/',
-	dist: 'app/dist/'
+	src: 'app/',
+	dist: '_site/'
 }
 var assetsPath = {
 	html: {
