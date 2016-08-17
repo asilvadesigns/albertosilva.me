@@ -10,9 +10,10 @@ var uglify       = require('gulp-uglify');
 var util		 = require('gulp-util');
 
 var basePath = {
-	src: 'app/',
+	src: './',
 	dist: '_site/'
 }
+
 var assetsPath = {
 	html: {
 		src: basePath.src + '/**/*.html'
@@ -25,11 +26,11 @@ var assetsPath = {
 	},
 	scripts: {
 		src: basePath.src + '/_js/**/*.js',
-		dist: basePath.dist + '/js/'
+		dist: basePath.src + '/js/'
 	},
 	styles: {
 		src: basePath.src + '/_sass/**/*.scss',
-		dist: basePath.dist + '/css/'
+		dist: basePath.src + '/css/'
 	}
 }
 
@@ -41,10 +42,10 @@ gulp.task(styles);
 gulp.task(watch);
 gulp.task('default',
 	gulp.series(
-		build,
-		scripts,
-		styles,
-		gulp.parallel(serve, watch)
+		'styles',
+		'scripts',
+		'build',
+		gulp.parallel('serve', 'watch')
 	)
 )
 
@@ -61,8 +62,8 @@ function styles() {
 		.pipe(browsersync.stream());
 }
 
-function build(done) {
-	return cp.spawn('jekyll.bat', ['build','--profile'], {stdio: 'inherit'}).on('close', done);
+function build() {
+	return cp.spawn('jekyll.bat', ['build'], {studio: 'inherit'});
 }
 
 function reload() {
@@ -74,8 +75,8 @@ function serve() {
 }
 
 function watch() {
-	gulp.watch(assetsPath.html.src).on('change', gulp.series(build, reload));
-	gulp.watch(assetsPath.markdown.src).on('change', gulp.series(build, reload));
+	gulp.watch(assetsPath.html.src).on('change', reload);
+	gulp.watch(assetsPath.markdown.src).on('change', reload);
 	gulp.watch(assetsPath.scripts.src).on('change', scripts);
 	gulp.watch(assetsPath.styles.src).on('change', styles);
 }

@@ -11,5 +11,8 @@
     "Silva"
   ],
   "author": "Alberto Silva",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "gulp-shell": "^0.5.2"
+  }
 }

@@ -1,0 +1,5 @@
+<nav>
+	{% for pages in site.pages %}
+	<a href="{{ page.url | prepend: site.baseurl }}">page.title</a>
+	{% endfor %}
+</nav>
