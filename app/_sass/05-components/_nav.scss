@@ -1,0 +1,43 @@
+/*
+ * Nav
+ */
+.nav {
+    margin-bottom: 6.4rem;
+}
+.nav__inner {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    @media (min-width: $bp-small) {
+        flex-direction: row;
+    }
+}
+.nav__logo {
+    font-family: "TisaWeb", "Georgia", sans-serif;
+    font-weight: bold;
+    @media (min-width: $bp-small) {
+        margin-right: auto;
+    }
+}
+.nav__item {
+    display: inline-flex;
+    padding: 0.8rem 1.6rem;
+}
+.nav__link {
+    font-family: "MarkWeb", "Arial", sans-serif;
+    @include font--small-caps();
+}
+/*
+ * Nav - Theme
+ */
+.nav--primary {
+    color: white;
+    background-color: $primary;
+    .nav__logo,
+    .nav__link {
+        color: inherit;
+        &:hover {
+            background-color: tint($primary, 10%);
+        }
+    }
+}

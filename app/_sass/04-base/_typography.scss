@@ -1,0 +1,51 @@
+/*
+ * Typeface
+ */
+@font-face {
+    font-family: "MarkWeb";
+    src: url("../font/MarkWeb.woff") format("woff");
+    font-weight: normal;
+}
+@font-face {
+    font-family: "MarkWeb";
+    src: url("../font/MarkWeb-Bold.woff") format("woff");
+    font-weight: bold;
+}
+@font-face {
+    font-family: "TisaWeb";
+    src: url("../font/TisaWeb.woff") format("woff");
+    font-weight: normal;
+}
+@font-face {
+    font-family: "TisaWeb";
+    src: url("../font/TisaWeb-Bold.woff") format("woff");
+    font-weight: bold;
+}
+/*
+ * Typography
+ */
+body {
+    color: $neutral;
+    font-family: "TisaWeb", "Georgia", serif;
+    font-size: 100%;
+    line-height: 1.6;
+    @include font--default();
+    @media (min-width: $bp-small) {
+        font-size: 112.5%;
+    }
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: "MarkWeb", "Arial", sans-serif;
+    font-size: 1.6rem;
+    font-weight: bold;
+    line-height: 1;
+    text-transform: capitalize;
+    margin-bottom: 1.6rem;
+}
+a {
+    color: $accent;
+}

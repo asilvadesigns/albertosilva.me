@@ -1,0 +1,27 @@
+@mixin font--default() {
+
+    /* setup OpenType features */
+    font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "onum" 1;
+    text-transform: none;
+
+    /* vendor prefixes */
+    -webkit-font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "onum" 1;
+    -moz-font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "onum" 1;
+    -moz-font-feature-settings: "kern=1, liga=1, pnum=1, onum=1";
+    -ms-font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "onum" 1;
+    -o-font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "onum" 1;
+}
+
+@mixin font--small-caps() {
+
+    /* setup OpenType features */
+    font-feature-settings: "kern" 1, "liga" 1, "smcp" 1;
+    text-transform: lowercase;
+
+    /* vendor prefixes */
+    -webkit-font-feature-settings: "kern" 1, "liga" 1, "smcp" 1;
+    -moz-font-feature-settings: "kern" 1, "liga" 1, "smcp" 1;
+    -moz-font-feature-settings: "kern=1, liga=1, smcp=1";
+    -ms-font-feature-settings: "kern" 1, "liga" 1, "smcp" 1;
+    -o-font-feature-settings: "kern" 1, "liga" 1, "smcp" 1;
+}

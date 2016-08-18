@@ -1,0 +1,8 @@
+<nav class="nav nav--primary">
+    <div class="nav__inner">
+        <a class="nav__item nav__logo" href="/">{{ site.title }}</a>
+        {% assign pagelist = site.pages | sort: 'navorder' %}
+        {% assign navgroup = 'main' %}
+        {% include nav--base.html %}
+    </div>
+</nav>
